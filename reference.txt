@@ -4,4 +4,4 @@ File Handling in Python : https://stackabuse.com/file-handling-in-python/
 
 Encryption and Digital Signatures using Python : https://medium.com/@securegns/implementing-asymmetric-encryption-to-secure-your-project-35368049cb5f
 
-pycrypto  PKCS1_v1_5 : https://github.com/dlitz/pycrypto/blob/master/lib/Crypto/Signature/PKCS1_v1_5.py
+pycrypto  PKCS1_v1_5 signing signature : https://github.com/dlitz/pycrypto/blob/master/lib/Crypto/Signature/PKCS1_v1_5.py
