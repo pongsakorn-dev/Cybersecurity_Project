@@ -23,11 +23,11 @@ class Encryptor:
         return base64.b64encode(iv + cipher.encrypt(message))
 
     def encrypt_file(self, file_name):
-        with open(file_name, 'rb') as fo:
-            plaintext = fo.read()
+        with open(file_name, 'rb') as fileopen:
+            plaintext = fileopen.read()
         enc = self.encrypt(plaintext, self.key)
-        with open(file_name + ".aes", 'wb') as fo:
-            fo.write(enc)
+        with open(file_name + ".aes", 'wb') as fileopen:
+            fileopen.write(enc)
 
     def decrypt(self, ciphertext, key):
         iv = ciphertext[:AES.block_size]
@@ -36,12 +36,11 @@ class Encryptor:
         return plaintext.rstrip(b"\0")
 
     def decrypt_file(self, file_name):
-        with open(file_name, 'rb') as fo:
-            ciphertext = fo.read()
+        with open(file_name, 'rb') as fileopen:
+            ciphertext = fileopen.read()
         dec = self.decrypt(ciphertext, self.key)
-        with open(file_name[:-4], 'wb') as fo:
-            fo.write(dec)
-        os.remove(file_name)
+        with open(file_name[:-4], 'wb') as fileopen:
+            fileopen.write(dec)
 
 
 key = b'[EX\xc8\xd5\xbfI{\xa2$\x05(\xd5\x18\xbf\xc0\x85)\x10nc\x94\x02)j\xdf\xcb\xc4\x94\x9d(\x9e'
